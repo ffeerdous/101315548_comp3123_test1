@@ -27,12 +27,14 @@ function removeLogs(){
             })
         }
     });
-    fs.rmdir(dir, (err) => {
-        if (err){
-            console.log("error occured in deleting folder", err);
-        }
-        console.log("directory deleted successfully");
-    })
+    if(fs.existsSync(dir)){
+        fs.rmdir(dir, (err) => {
+            if (err){
+                console.log("error occured in deleting folder", err);
+            }
+            console.log("directory deleted successfully");
+        })
+    }
 };
-//createLogs();
+createLogs();
 removeLogs();
