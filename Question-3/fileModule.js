@@ -37,4 +37,5 @@ function removeLogs(){
     }
 };
 createLogs();
+//Run the RemoveLogs twice completly delete the directory
 removeLogs();
